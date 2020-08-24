@@ -1,2 +1,7 @@
-# Unity_Pooling_System
- Unity pooling system
+# Unity Pooling System
+ My implementation of an object pool using the factor pattern.
+
+
+    Hold and drag right mouse button to rotate camera
+    Use mouse wheel to zoom in/out
+
