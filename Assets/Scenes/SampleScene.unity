@@ -554,7 +554,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 897073446}
         m_TargetAssemblyTypeName: SpawnSystem.Spawner, Assembly-CSharp
-        m_MethodName: SpawnCube
+        m_MethodName: OnSpawnCube
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -874,7 +874,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 897073446}
         m_TargetAssemblyTypeName: SpawnSystem.Spawner, Assembly-CSharp
-        m_MethodName: Reset
+        m_MethodName: OnReset
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1071,7 +1071,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 897073446}
         m_TargetAssemblyTypeName: SpawnSystem.Spawner, Assembly-CSharp
-        m_MethodName: ActiveSpawn
+        m_MethodName: OnActiveSpawn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1128,8 +1128,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 897073447}
-  - component: {fileID: 897073446}
   - component: {fileID: 897073445}
+  - component: {fileID: 897073446}
   - component: {fileID: 897073448}
   m_Layer: 0
   m_Name: Spawner
@@ -1153,13 +1153,13 @@ MonoBehaviour:
   pools:
   - tag: 0
     prefab: {fileID: 8279112769237790735, guid: 2cc6d4448954add40939993afd85fa06, type: 3}
-    maxSize: 100
+    initSize: 250
   - tag: 1
     prefab: {fileID: 9090277212654796678, guid: 8952ca7b441e5c443b8c9da986710c70, type: 3}
-    maxSize: 100
+    initSize: 250
   - tag: 2
     prefab: {fileID: 9090277212654796678, guid: 5ce6bfdb36ea7bf4cb17fd4d0b5ac337, type: 3}
-    maxSize: 100
+    initSize: 250
 --- !u!114 &897073446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1172,7 +1172,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f61e2f2c681335a4a8f1ee719867c8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uIRoot: {fileID: 399579877}
 --- !u!4 &897073447
 Transform:
   m_ObjectHideFlags: 0
@@ -1200,7 +1199,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de9675638471bb4e8a3fbe72ce5c0ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uIRoot: {fileID: 399579877}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,7 +1541,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 897073446}
         m_TargetAssemblyTypeName: SpawnSystem.Spawner, Assembly-CSharp
-        m_MethodName: SpawnAutoReturned
+        m_MethodName: OnSpawnAutoReturned
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1991,7 +1989,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 897073446}
         m_TargetAssemblyTypeName: SpawnSystem.Spawner, Assembly-CSharp
-        m_MethodName: SpawnSphere
+        m_MethodName: OnSpawnSphere
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

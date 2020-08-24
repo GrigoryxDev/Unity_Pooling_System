@@ -4,16 +4,21 @@ using UnityEngine;
 
 namespace SpawnSystem
 {
+    /// <summary>
+    /// This class automatically returns pooled object to its origin pool after a certain amount of time has passed.
+    /// </summary>
     public class AutoReturnPooled : MonoBehaviour
     {
         [SerializeField] private float time = 5.0f;
         [SerializeField] private Material material;
         private float currentTime;
+
         private void OnEnable()
         {
             currentTime = time;
             StartCoroutine(StartCountdown());
         }
+
         private IEnumerator StartCountdown()
         {
             while (currentTime > 0)
@@ -26,6 +31,7 @@ namespace SpawnSystem
                 material.color = color;
                 currentTime--;
             }
+
             GetComponent<IPooledObject>().OnObjectDestroy();
         }
 

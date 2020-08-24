@@ -6,46 +6,51 @@ namespace SpawnSystem
 {
     public class Spawner : MonoBehaviour
     {
-        [SerializeField] private UIRoot uIRoot;
+         private UIRoot uIRoot;
         private bool active;
+        public UIRoot UIRoot => uIRoot ?? (uIRoot = UIRoot.Instance);
 
         private void Update()
         {
             if (active)
             {
-                SpawnCube();
-                SpawnSphere();
-                SpawnAutoReturned();
+                OnSpawnCube();
+                OnSpawnSphere();
+                OnSpawnAutoReturned();
             }
         }
 
-        public void ActiveSpawn()
+        public void OnActiveSpawn()
         {
             active = !active;
         }
 
-        public void SpawnCube()
+        public void OnSpawnCube()
         {
-            uIRoot.ObjectPooler.SpawnFromPool(PoolObjectsTag.Cube);
-            uIRoot.Counter.CubesCounter++;
+            UIRoot.ObjectPooler.SpawnFromPool(PoolObjectsTag.Cube);
+            UIRoot.Counter.CubesCounter++;
         }
 
-        public void SpawnSphere()
+        public void OnSpawnSphere()
         {
-            uIRoot.ObjectPooler.SpawnFromPool(PoolObjectsTag.Sphere);
-            uIRoot.Counter.SpheresCounter++;
+            UIRoot.ObjectPooler.SpawnFromPool(PoolObjectsTag.Sphere);
+            UIRoot.Counter.SpheresCounter++;
         }
 
-        public void SpawnAutoReturned()
+        public void OnSpawnAutoReturned()
         {
-            uIRoot.ObjectPooler.SpawnFromPool(PoolObjectsTag.AutoReturned);
-            uIRoot.Counter.AutoReturnedCounter++;
+            UIRoot.ObjectPooler.SpawnFromPool(PoolObjectsTag.AutoReturned);
+            UIRoot.Counter.AutoReturnedCounter++;
         }
 
-        public void Reset()
+        public void OnReset()
         {
-            uIRoot.ObjectPooler.Reset();
-            uIRoot.Counter.Reset();
+            foreach (var poledObject in transform.GetComponentsInChildren<IPooledObject>())
+            {
+                poledObject.OnObjectReset();
+            }
+
+            UIRoot.Counter.Reset();
 
         }
     }

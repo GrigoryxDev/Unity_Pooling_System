@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Counter : MonoBehaviour
 {
-    [SerializeField] private UIRoot uIRoot;
+     private UIRoot uIRoot;
     private int cubesCounter;
     private int spheresCounter;
     private int autoReturnedCounter;

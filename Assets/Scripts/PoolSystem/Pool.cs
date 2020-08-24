@@ -9,6 +9,7 @@ namespace SpawnSystem
 
         public GameObject prefab;
 
-        public int maxSize;
+        public int initSize;
+
     }
 }

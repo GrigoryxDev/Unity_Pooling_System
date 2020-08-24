@@ -7,8 +7,7 @@ public abstract class BaseObject : MonoBehaviour, IPooledObject
 {
     [SerializeField] protected float upForce = 1f;
     [SerializeField] protected float sideForce = .1f;
-
-    [SerializeField] protected static UIRoot uIRoot;
+    protected static UIRoot uIRoot;
     public static UIRoot UIRoot => uIRoot ?? (uIRoot = UIRoot.Instance);
     public PoolObjectsTag Tag { get; set; }
 
@@ -53,7 +52,6 @@ public abstract class BaseObject : MonoBehaviour, IPooledObject
                 break;
         }
 
-        Debug.Log($"{Tag} was destroyed!");
         OnObjectReset();
     }
 }
