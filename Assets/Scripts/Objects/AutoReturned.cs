@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AutoReturned : BaseObject
+namespace Objects
 {
+    public class AutoReturned : BaseObject
+    {
+    }
 }

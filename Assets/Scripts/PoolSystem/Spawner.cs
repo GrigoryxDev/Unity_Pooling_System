@@ -6,7 +6,7 @@ namespace SpawnSystem
 {
     public class Spawner : MonoBehaviour
     {
-         private UIRoot uIRoot;
+        private UIRoot uIRoot;
         private bool active;
         public UIRoot UIRoot => uIRoot ?? (uIRoot = UIRoot.Instance);
 
@@ -43,6 +43,9 @@ namespace SpawnSystem
             UIRoot.Counter.AutoReturnedCounter++;
         }
 
+        /// <summary>
+        /// Return all active objects to the pool
+        /// </summary> 
         public void OnReset()
         {
             foreach (var poledObject in transform.GetComponentsInChildren<IPooledObject>())

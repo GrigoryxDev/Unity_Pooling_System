@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Counter : MonoBehaviour
 {
-     private UIRoot uIRoot;
+    private UIRoot uIRoot;
     private int cubesCounter;
     private int spheresCounter;
     private int autoReturnedCounter;
@@ -38,8 +38,6 @@ public class Counter : MonoBehaviour
             UIRoot.TextAutoReturned.text = $"Auto returned on Screen: {autoReturnedCounter}";
         }
     }
-
-
 
     private void Start()
     {

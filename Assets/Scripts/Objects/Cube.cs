@@ -1,6 +1,8 @@
-﻿using SpawnSystem;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Cube : BaseObject
+namespace Objects
 {
+    public class Cube : BaseObject
+    {
+    }
 }
